@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinhole Camera Exposure Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pinhole Camera Exposure Calculator</h1>
+        <form id="exposureForm">
+            <label for="refExposureTime">Metered Exposure Time (seconds):</label>
+            <input list="shutterSpeeds" id="refExposureTime" required>
+            <datalist id="shutterSpeeds">
+                <option value="1/1000">1/1000</option>
+                <option value="1/500">1/500</option>
+                <option value="1/250">1/250</option>
+                <option value="1/125">1/125</option>
+                <option value="1/60">1/60</option>
+                <option value="1/30">1/30</option>
+                <option value="1/15">1/15</option>
+                <option value="1/8">1/8</option>
+                <option value="1/4">1/4</option>
+                <option value="1/2">1/2</option>
+                <option value="1">1</option>
+            </datalist>
+            <br>
+            <label for="refAperture">Metered Aperture (f-number):</label>
+            <select id="refAperture" required>
+                <option value="22">f/22</option>
+                <option value="16">f/16</option>
+                <option value="11">f/11</option>
+                <option value="9.5">f/9.5</option>
+                <option value="8">f/8</option>
+                <option value="6.7">f/6.7</option>
+                <option value="5.6">f/5.6</option>
+                <option value="4.8">f/4.8</option>
+                <option value="4">f/4</option>
+                <option value="3.4">f/3.4</option>
+                <option value="2.8">f/2.8</option>
+                <option value="2">f/2</option>
+            </select>
+            <br>
+            <label for="refISO">Metered ISO:</label>
+            <input list="isoValues" id="refISO" required>
+            <datalist id="isoValues">
+                <option value="6">6</option>
+                <option value="20">20</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="400">400</option>
+                <option value="800">800</option>
+                <option value="1600">1600</option>
+                <option value="3200">3200</option>
+                <option value="6400">6400</option>
+            </datalist>
+            <br>
+            <label for="pinholeDiameter">Pinhole Diameter (mm):</label>
+            <input list="pinholeDiameters" id="pinholeDiameter" step="0.01" required>
+            <datalist id="pinholeDiameters">
+                <option value="0.3">0.3 (Obscura)</option>
+                <option value="0.35">0.35 (Titan-72mm)</option>
+                <option value="0.44">0.44 (Titan-110mm)</option>
+                <option value="0.52">0.52 (Titan-150)</option>
+            </datalist>
+            <br>
+            <label for="focalLength">Focal Length (mm):</label>
+            <input list="focalLengths" id="focalLength" step="0.1" required>
+            <datalist id="focalLengths">
+                <option value="72">72 (Titan)</option>
+                <option value="87">87 (Obscura)</option>
+                <option value="110">110 (Titan)</option>
+                <option value="150">150 (Titan)</option>
+            </datalist>
+            <br>
+            <label for="filmFormat">Film Format:</label>
+            <select id="filmFormat" required>
+                <option value="24">35mm</option>
+                <option value="56">120mm</option>
+                <option value="95">4x5 sheet film</option>
+                <option value="120">5x7 sheet film</option>
+                <option value="203">8x10 sheet film</option>
+            </select>
+            <br>
+            <label for="iso">ISO of Film:</label>
+            <input list="isoValues" id="iso" required>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results">
+            <h2>Results</h2>
+            <p id="pinholeFNumber"></p>
+            <p id="pinholeExposureTime"></p>
+            <p id="viewAngle"></p>
+        </div>
+        <button id="recalculateButton" style="display:none;">Recalculate</button>
+        <p id="refreshMessage" style="display:none;">Please refresh the browser before recalculating.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

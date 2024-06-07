@@ -70,11 +70,12 @@ Ensure you have Node.js and TypeScript installed on your system.
 
 ```sh
 pinhole-camera-exposure-calculator/
-├── index.html : The main HTML file for the application.
-├── styles.css : The CSS file for styling the application.
-├── script.ts : The TypeScript file containing the logic for the application.
-├── script.js : The compiled JavaScript file from the TypeScript source.
-└── README.md : This README file
+├── index.html // The main HTML file for the application.
+├── styles.css // The CSS file for styling the application.
+├── script.ts // The TypeScript file containing the logic for the application.
+├── script.js // The compiled JavaScript file from the TypeScript source.
+└── README.md // This README file
+```
 
 ## Contributing
 I encourage the community to improve the tool for greater usability.
@@ -92,6 +93,6 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 This project was inspired by my own need for accurate exposure calculations for pinhole photography. I hope that it 
-also serves the needs of the pinhole camear enthusiast community.
+also serves the needs of the pinhole camera enthusiast community.
 In the spirit of open discourse I will include constructive criticism with attribution here.
 I will also include data for your pinhole camera if you wish!
